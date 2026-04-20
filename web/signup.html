@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Signup - Insta Clone</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap');
+
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+/* Floating background shapes */
+.shape {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(40px);
+    animation: float 8s ease-in-out infinite;
+}
+.shape1 {
+    width: 300px;
+    height: 300px;
+    background: rgba(255, 105, 180, 0.3);
+    top: -60px;
+    left: -60px;
+}
+.shape2 {
+    width: 350px;
+    height: 350px;
+    background: rgba(255, 255, 255, 0.4);
+    bottom: -80px;
+    right: -80px;
+    animation-delay: 2s;
+}
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(25px); }
+}
+
+/* Signup form container */
+.signup-container {
+    position: relative;
+    z-index: 1;
+    background: rgba(255, 255, 255, 0.15);
+    padding: 35px 28px;
+    border-radius: 20px;
+    backdrop-filter: blur(14px);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+    width: 340px;
+    text-align: center;
+    animation: fadeSlideUp 1s ease forwards;
+    transform: translateY(50px);
+    opacity: 0;
+}
+@keyframes fadeSlideUp {
+    to { transform: translateY(0); opacity: 1; }
+}
+
+h2 {
+    margin-bottom: 20px;
+    color: #fff;
+    font-weight: 600;
+    font-size: 24px;
+}
+
+/* Error message styling */
+.error {
+    color: #ffbaba;
+    margin-bottom: 14px;
+    font-size: 14px;
+    background: rgba(255,0,0,0.2);
+    padding: 6px;
+    border-radius: 6px;
+    text-align: center;
+}
+
+/* Input group with icon */
+.input-group {
+    position: relative;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+}
+.input-group i {
+    position: absolute;
+    left: 12px;
+    color: #ff6f91;
+    font-size: 15px;
+}
+.input-group input {
+    width: 100%;
+    padding: 12px 12px 12px 38px;
+    border-radius: 12px;
+    border: none;
+    outline: none;
+    font-size: 14px;
+    background: rgba(255,255,255,0.85);
+    color: #333;
+    transition: box-shadow 0.3s ease, background 0.3s ease;
+    box-sizing: border-box;
+}
+.input-group input::placeholder {
+    color: rgba(0,0,0,0.5);
+}
+.input-group input:focus {
+    background: rgba(255,255,255,1);
+    box-shadow: 0 0 12px rgba(255,105,180,0.6);
+}
+
+/* Submit button */
+input[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(135deg, #ff6f91, #ff758c);
+    color: #fff;
+    font-size: 15px;
+    font-weight: 500;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    margin-top: 5px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+input[type="submit"]:hover {
+    transform: translateY(-2px) scale(1.03);
+    box-shadow: 0 4px 14px rgba(0,0,0,0.15);
+}
+
+/* Already have account text */
+p {
+    margin-top: 18px;
+    font-size: 13px;
+    color: white;
+}
+a {
+    color: #fff;
+    text-decoration: underline;
+    font-weight: 500;
+}
+a:hover {
+    text-decoration: none;
+}
+
+/* Mobile */
+@media (max-width: 400px) {
+    .signup-container {
+        width: 90%;
+        padding: 25px 18px;
+    }
+}
+</style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+<!-- Floating shapes -->
+<div class="shape shape1"></div>
+<div class="shape shape2"></div>
+
+<!-- Signup form -->
+<form class="signup-container" method="post" action="SignupServlet">
+    <h2>Create Account</h2>
+
+    <div id="error-message" class="error" style="display:none;"></div>
+
+    <div class="input-group">
+        <i class="fa-solid fa-user"></i>
+        <input type="text" name="username" placeholder="Username" required>
+    </div>
+
+    <div class="input-group">
+        <i class="fa-solid fa-lock"></i>
+        <input type="password" name="password" placeholder="Password" required>
+    </div>
+
+    <input type="submit" value="Sign Up">
+
+    <p>Already have an account? <a href="index.html">Login</a></p>
+</form>
+
+<script>
+    const params = new URLSearchParams(window.location.search);
+    if (params.has("error")) {
+        const msg = document.getElementById("error-message");
+        msg.style.display = "block";
+        msg.textContent = params.get("error");
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,93 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 15 Aug, 2025, 4:08:52 PM
+    Author     : Tanisha C Shetty
+*/
+
+/* General Body */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #f0f2f5;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+/* Main Container */
+.container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+/* Page Heading */
+h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #0095f6;
+    font-size: 28px;
+    letter-spacing: 1px;
+}
+
+/* Post Card */
+.post {
+    background: white;
+    padding: 20px;
+    border-radius: 16px;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.post:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Post Image */
+.post img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    margin-top: 10px;
+    object-fit: cover;
+}
+
+/* Caption */
+.caption {
+    color: #555;
+    margin: 12px 0;
+    font-size: 15px;
+    line-height: 1.4;
+}
+
+/* Stats Section */
+.stats {
+    margin-top: 12px;
+    font-size: 14px;
+    color: #555;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.stats span {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.stats i {
+    color: #0095f6;
+}
+
+/* Error message styling */
+.error {
+    color: red;
+    text-align: center;
+    margin-top: 20px;
+}
