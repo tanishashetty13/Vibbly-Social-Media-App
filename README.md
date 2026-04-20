@@ -5,7 +5,7 @@ A Java JSP & Servlet based social media platform.
 ## Features
 - User login/signup
 - Upload posts with images
-- Like, comment, share
+- Like, comment, share, delete
 - Follow system
 - Notifications
 
