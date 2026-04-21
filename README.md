@@ -12,7 +12,7 @@ A Java JSP & Servlet based social media platform.
 ## Screenshots
 
 ### Home Page
-![Home](images/HomePage.png)
+![Home](web/images/HomePage.png)
 
 ### Login Page
 ![Login](images/LoginPage.png)
