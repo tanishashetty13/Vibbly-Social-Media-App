@@ -11,20 +11,23 @@ A Java JSP & Servlet based social media platform.
 
 ## Screenshots
 
-### Home Page
-![Home](web/images/HomePage.png)
+### Signup Page
+![Signup](web/images/SignupPage.png)
 
 ### Login Page
-![Login](images/LoginPage.png)
+![Login](web/images/LoginPage.png)
+
+### Home Page
+![Home](web/images/HomePage.png)
+ 
+### Post Page
+![Post](web/images/Post.png)
+
 
 ### Notifications
-![Notifications](images/NotificationPage.png)
+![Notifications](web/images/NotificationPage.png)
 
 ### Profile Page
-![Profile](images/ProfilePage.png)
+![Profile](web/images/ProfilePage.png)
 
-### Signup Page
-![Signup](images/SignupPage.png)
 
-### Post Page
-![Post](images/Post.png)
